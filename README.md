@@ -47,8 +47,7 @@ The u-net is convolutional network architecture for fast and precise segmentatio
 ![标注图](https://raw.githubusercontent.com/tanjunlong/MyProject/master/imgShow/dataSetMasksEx.jpg  "示例")
 
 
-	>注：因为对图片处理完成之后生成了.json文件，所以我们直接编写py脚本利用labelme_export_json.exe
-	对若干个json文件执行转换后生成对应的png格式图片。
+>注：因为对图片处理完成之后生成了.json文件，所以我们直接编写py脚本利用labelme_export_json.exe对若干个json文件执行转换后生成对应的png格式图片。
 
 ## *三、<span id="三、模型训练">模型训练</span>*
 ### 1. <span id="1.软硬件平台的选择">软硬件平台的选择</span>
