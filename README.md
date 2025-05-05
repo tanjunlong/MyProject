@@ -97,7 +97,7 @@ def get_args():
 		②imgs_dataset_part01.rar — part12.rar为对应的数据集图片部分<br>
 		③imgs_json_part1.rar — part4.rar为对应的数据集标注.json文件<br>
 		④checkpoints.zip文件可以看到有两个部分，解压的时候，选中checkpoints.zip（主压缩文件）,点击解压即可<br>
-	    **注：在项目路径下创建文件夹data文件夹，里面再创建imgs文件夹和jmasks文件夹，将解压后的所有数据集图片部分放入到imgs文件夹中，再将所有的掩码图解压后放入到masks文件夹中即可**
-	>![标注图](https://raw.githubusercontent.com/tanjunlong/MyProject/master/imgShow/contentStructure.png  "示例")
+	    **注：在项目路径下创建文件夹data文件夹，里面再创建imgs文件夹和jmasks文件夹，将解压后的所有数据集图片部分放入到imgs文件夹中，再将所有的掩码图解压后放入到masks文件夹中即可（如下图）**
+	![标注图](https://raw.githubusercontent.com/tanjunlong/MyProject/master/imgShow/contentStructure.png  "示例")
 
 [id]:https://github.com/zhixuhao/unet
