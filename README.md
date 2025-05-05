@@ -8,7 +8,7 @@
 >1.1. 模型简介
 The u-net is convolutional network architecture for fast and precise segmentation of images. Up to now it has outperformed the prior best method (a sliding-window convolutional network) on the ISBI challenge for segmentation of neuronal structures in electron microscopic stacks. It has won the Grand Challenge for Computer-Automated Detection of Caries in Bitewing Radiography at ISBI 2015, and it has won the Cell Tracking Challenge at ISBI 2015 on the two most challenging transmitted light microscopy categories (Phase contrast and DIC microscopy) by a large margin (See also our annoucement).
 	 ![UNet Model](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/u-net-architecture.png  "示例1")
-<div style="text-align: right;">u-net模型结构图</div>
+					u-net模型结构图
 ### 2. 本地所需环境的搭建
 ```
 	PyTorch2.0.0 + Cuda1.7.0 + Python 3.8
