@@ -23,12 +23,12 @@ The u-net is convolutional network architecture for fast and precise segmentatio
 ## *二、数据集的收集以及预处理*
 ### 1. 数据收集
  在博物馆的紫砂壶展厅收集累计286张原始紫砂壶相关的高清图片，此外也在青瓷展厅采集了一些青瓷器图来辅助模型验证。示例紫砂壶合集图片如下：
- ![紫砂壶](https://raw.githubusercontent.com/tanjunlong/MyProject/master/datasetEx.jpg  "示例")
+ ![紫砂壶](https://raw.githubusercontent.com/tanjunlong/MyProject/master/imgShow/datasetEx.jpg  "示例")
  
  
 ### 2. 标注数据集
 选择labelme软件进行标注时，有一点要注意，使用labelme软件时，可以通过手动多边形标注，也可以用它自带的AI模型进行标注，但是后者对电脑的性能要求较高。示例标注且转码后掩码图合集如下：
-![标注图](https://raw.githubusercontent.com/tanjunlong/MyProject/master/dataSetMasksEx.jpg  "示例")
+![标注图](https://raw.githubusercontent.com/tanjunlong/MyProject/master/imgShow/dataSetMasksEx.jpg  "示例")
 
 
 	>注：因为对图片处理完成之后生成了.json文件，所以我们直接编写py脚本利用labelme_export_json.exe
