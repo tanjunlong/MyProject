@@ -85,9 +85,9 @@ def get_args():
 | **epochs：20<br>batch_size：5<br>learning_rate：1e^-5^** | 0.6978 | 0.2435|
 
 ## *五、模型效果*
-==测试图片合集示例：==
+**测试图片合集示例：**
 ![标注图](https://raw.githubusercontent.com/tanjunlong/MyProject/master/validation.jpg  "示例")
-==测试效果合集示例：==
+**测试效果合集示例：**
 ![标注图](https://raw.githubusercontent.com/tanjunlong/MyProject/master/validationMasks.jpg  "示例")
 
 ## *六、项目相关文件说明*
