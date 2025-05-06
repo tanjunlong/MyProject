@@ -96,7 +96,6 @@ def get_args():
 		②data文件夹中data文件夹中的imgs文件夹中包含所有原始数据集的压缩包，需要将12个parts压缩包全部解压到data/imgs文件夹下；masks文件夹中包含所有原始数据集对应的掩码图，需将img_masks.rar压缩文件解压到data/masks文件夹下<br>
 		③document文件夹中包含requirements.txt文件，里面包含所有所需的工具包说明<br>
 		④imgShow仅放置GitHub仓库中的展示图片<br>
-  [点击跳转至开头](#jump)
 	![标注图](https://raw.githubusercontent.com/tanjunlong/MyProject/master/imgShow/contentStructure.png  "示例")
-
+  [点击跳转至开头](#jump)
 [id]:https://github.com/zhixuhao/unet
