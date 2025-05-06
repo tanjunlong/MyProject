@@ -18,7 +18,7 @@ The u-net is convolutional network architecture for fast and precise segmentatio
 		③ Pillow==9.3.0
 		④ tqdm==4.64.1
 		⑤ wandb==0.13.5
-注：项目文件中的requirements.txt包含上面所需的工具包
+注：项目文件中doucument/requirements.txt包含上面所需的工具包
 ```
 
 ## *二、数据集的收集以及预处理*
