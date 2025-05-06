@@ -78,11 +78,11 @@ def get_args():
 
 ## *四、实验结果*
 不同超参数下的模型的F1-score
-| 超参数 | F1-Score | train-loss |
-|:---:|:---:|:---:|
-| **epochs：5<br>batch_size：1<br>learning_rate：1e^-5^** | 0.5475 | 0.4833 |
-| **epochs：10<br>batch_size：3<br>learning_rate：3e^-4^** | 0.6007 | 0.3682 |
-| **epochs：20<br>batch_size：5<br>learning_rate：1e^-5^** | 0.6978 | 0.2435|
+| 超参数 | F1-Score | Iou | ACC |
+|:---:|:---:|:---:| :---:|
+| **epochs：5<br>batch_size：1<br>learning_rate：1e^-5^** | 0.533 | 0.37 | 0.893 |
+| **epochs：10<br>batch_size：3<br>learning_rate：3e^-4^** | 0.612 | 0.368 | 0.908 |
+| **epochs：20<br>batch_size：5<br>learning_rate：1e^-5^** | 0.687 | 0.343 | 0.88 |
 
 ## *五、模型效果*
 **测试图片合集示例：**
