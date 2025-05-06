@@ -92,11 +92,10 @@ def get_args():
 
 ## *六、项目相关文件说明*
 >由于GitHub本地上传大小限制100MB，所以将数据集图片，掩码图片，.json文件压缩成上图的若干个压缩部分：<br>
-		①img_masks.rar文件为数据集对应的掩码图<br>
-		②imgs_dataset_part01.rar — part12.rar为对应的数据集图片部分<br>
-		③imgs_json_part1.rar — part4.rar为对应的数据集标注.json文件<br>
-		④checkpoints.zip文件可以看到有两个部分，解压的时候，选中checkpoints.zip（主压缩文件）,点击解压即可<br>
-	    **注：在项目路径下创建文件夹data文件夹，里面再创建imgs文件夹和jmasks文件夹，将解压后的所有数据集图片部分放入到imgs文件夹中，再将所有的掩码图解压后放入到masks文件夹中即可（如下图）**
+		①code文件夹中包含所有程序代码，需将其中的code.rar压缩文件中包含的所有文件都解压到data同级目录下（如下图所示）<br>
+		②data文件夹中data文件夹中的imgs文件夹中包含所有原始数据集的压缩包，需要将12个parts压缩包全部解压到data/imgs文件夹下；masks文件夹中包含所有原始数据集对应的掩码图，需将img_masks.rar压缩文件解压到data/masks文件夹下<br>
+		③document文件夹中包含requirements.txt文件，里面包含所有所需的工具包说明<br>
+		④imgShow仅放置GitHub仓库中的展示图片<br>
 	![标注图](https://raw.githubusercontent.com/tanjunlong/MyProject/master/imgShow/contentStructure.png  "示例")
 
 [id]:https://github.com/zhixuhao/unet
