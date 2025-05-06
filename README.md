@@ -1,23 +1,7 @@
 # *segmentation of purple clay teapots*
-## *目录*
->[一、框架搭建](#一、框架搭建)
-	<pre>[1.1模型选择](#1.模型选择)</pre>
-	<pre>[1.2本地所需环境的搭建](#2.本地所需环境的搭建)</pre>
- >[二、数据集的收集以及预处理](#二、数据集的收集以及预处理)
-	<pre>[2.1数据收集](#1.数据收集)</pre>
-	<pre>[2.2标注数据集](#2.标注数据集)</pre>
->[三、模型训练](#三、模型训练)<div>
-	<pre>[3.1软硬件平台的选择](#1.软硬件平台的选择)</pre>
-	<pre>[3.2预定义模型](#2.预定义模型)</pre>
-	<pre>[3.3调整训练参数](#3.调整训练参数)</pre>
-	<pre>[3.4训练过程](#4.训练过程)</pre>
->[四、实验结果](#四、实验结果)<div>
->[五、模型效果](#五、模型效果)<div>
->[六、项目相关文件说明](#六、项目相关文件说明)<div>
 
-
-## *一、<span id="一、框架搭建">框架搭建</span>*
-### 1. <span id="1.模型选择">模型选择</span>
+## *一、框架搭建*
+### 1. 模型选择
 考虑到自身电脑的硬件性能有限，为了实现模型与设备的良好适配以及达成模型轻量化的目标，最终选择采用 UNet 分割模型，可以直接访问[UNet模型的GitHub下载网址][id]来直接下载预处理过后的UNet模型。
 
 
@@ -25,7 +9,7 @@
 The u-net is convolutional network architecture for fast and precise segmentation of images. Up to now it has outperformed the prior best method (a sliding-window convolutional network) on the ISBI challenge for segmentation of neuronal structures in electron microscopic stacks. It has won the Grand Challenge for Computer-Automated Detection of Caries in Bitewing Radiography at ISBI 2015, and it has won the Cell Tracking Challenge at ISBI 2015 on the two most challenging transmitted light microscopy categories (Phase contrast and DIC microscopy) by a large margin (See also our annoucement).
 	 ![UNet Model](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/u-net-architecture.png  "示例1")
 					u-net模型结构图
-### 2. <span id="2.本地所需环境的搭建">本地所需环境的搭建</span>
+### 2. 本地所需环境的搭建
 ```
 	PyTorch2.0.0 + Cuda1.7.0 + Python 3.8
     所需工具包
@@ -36,23 +20,23 @@ The u-net is convolutional network architecture for fast and precise segmentatio
 		⑤ wandb==0.13.5
 ```
 
-## *二、<span id="二、数据集的收集以及预处理">数据集的收集以及预处理</span>*
-### 1. <span id="1.数据收集">数据收集</span>
+## *二、数据集的收集以及预处理*
+### 1. 数据收集
  在博物馆的紫砂壶展厅收集累计286张原始紫砂壶相关的高清图片，此外也在青瓷展厅采集了一些青瓷器图来辅助模型验证。示例紫砂壶合集图片如下：
  ![紫砂壶](https://raw.githubusercontent.com/tanjunlong/MyProject/master/imgShow/datasetEx.jpg  "示例")
  
  
-### 2. <span id="2.标注数据集">标注数据集</span>
+### 2. 标注数据集
 选择labelme软件进行标注时，有一点要注意，使用labelme软件时，可以通过手动多边形标注，也可以用它自带的AI模型进行标注，但是后者对电脑的性能要求较高。示例标注且转码后掩码图合集如下：
 ![标注图](https://raw.githubusercontent.com/tanjunlong/MyProject/master/imgShow/dataSetMasksEx.jpg  "示例")
 
 
 >注：因为对图片处理完成之后生成了.json文件，所以我们直接编写py脚本利用labelme_export_json.exe对若干个json文件执行转换后生成对应的png格式图片。
 
-## *三、<span id="三、模型训练">模型训练</span>*
-### 1. <span id="1.软硬件平台的选择">软硬件平台的选择</span>
+## *三、模型训练*
+### 1. 软硬件平台的选择
 如果本地有性能较高的显卡，则本机训练就行，若是没有高性能的显卡，可以考虑在GPU算力平台上租赁相关的显卡平台进行训练。本人选择租赁的是3090(24G显存)显卡+AMD Ryzen 5 5600X,训练十轮，批次大小为1的情况下，训练时间大致在1小时左右。
-### 2. <span id="2.预定义模型">预定义模型</span>
+### 2. 预定义模型
 ```python
 	def train_model(
         model,
@@ -69,7 +53,7 @@ The u-net is convolutional network architecture for fast and precise segmentatio
         gradient_clipping: float = 1.0,
 ):
 ```
-### 3. <span id="3.调整训练参数">调整训练参数</span>
+### 3. 调整训练参数
 ```python
 def get_args():
     parser = argparse.ArgumentParser(description='Train the UNet on images and target masks')
@@ -88,10 +72,10 @@ def get_args():
 ```
 >注：在get_args函数中调整epochs、batchSize、learningRate等超参数...
 
-### 4. <span id="4.训练过程">训练过程</span>
+### 4. 训练过程
 调整完合适的超参数过后，可以直接在命令行输入python train.py进入到训练过程，训练完成后会打印显示step、trainLoss、validationDice等信息。在执行的过程中，每一轮训练完成后会生成相应的模型权重文件(.pth文件)，也就是说多轮训练会产生多个模型权重文件，其默认放置在生成的checkpoints文件夹中，我们可以通过predict.py并结合checkpoint_epoch.pth文件来进行验证，例如：python predict.py -i data/imgs/1.jpg -m checkpoints/checkpoint_epoch.pth
 
-## *四、<span id="四、实验结果">实验结果</span>*
+## *四、实验结果*
 不同超参数下的模型的F1-score
 | 超参数 | F1-Score | train-loss |
 |:---:|:---:|:---:|
@@ -99,13 +83,13 @@ def get_args():
 | **epochs：10<br>batch_size：3<br>learning_rate：3e^-4^** | 0.6007 | 0.3682 |
 | **epochs：20<br>batch_size：5<br>learning_rate：1e^-5^** | 0.6978 | 0.2435|
 
-## *五、<span id="五、模型效果">模型效果</span>*
+## *五、模型效果*
 **测试图片合集示例：**
 ![标注图](https://raw.githubusercontent.com/tanjunlong/MyProject/master/imgShow/validation.jpg  "示例")
 **测试效果合集示例：**
 ![标注图](https://raw.githubusercontent.com/tanjunlong/MyProject/master/imgShow/validationMasks.jpg  "示例")
 
-## *六、<span id="六、项目相关文件说明">项目相关文件说明*
+## *六、项目相关文件说明*
 ![标注图](https://raw.githubusercontent.com/tanjunlong/MyProject/master/imgShow/compressedFileInstructions.png  "示例")
 >由于GitHub本地上传大小限制100MB，所以将数据集图片，掩码图片，.json文件压缩成上图的若干个压缩部分：<br>
 		①img_masks.rar文件为数据集对应的掩码图<br>
