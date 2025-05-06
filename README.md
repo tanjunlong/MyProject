@@ -91,7 +91,6 @@ def get_args():
 ![标注图](https://raw.githubusercontent.com/tanjunlong/MyProject/master/imgShow/validationMasks.jpg  "示例")
 
 ## *六、项目相关文件说明*
-![标注图](https://raw.githubusercontent.com/tanjunlong/MyProject/master/imgShow/compressedFileInstructions.png  "示例")
 >由于GitHub本地上传大小限制100MB，所以将数据集图片，掩码图片，.json文件压缩成上图的若干个压缩部分：<br>
 		①img_masks.rar文件为数据集对应的掩码图<br>
 		②imgs_dataset_part01.rar — part12.rar为对应的数据集图片部分<br>
