@@ -80,9 +80,9 @@ def get_args():
 不同超参数下的模型的F1-score
 | 超参数 | F1-Score | Iou | ACC |
 |:---:|:---:|:---:| :---:|
-| **epochs：5<br>batch_size：1<br>learning_rate：1e^-5^** | 0.533 | 0.37 | 0.893 |
-| **epochs：10<br>batch_size：3<br>learning_rate：3e^-4^** | 0.612 | 0.368 | 0.908 |
-| **epochs：20<br>batch_size：5<br>learning_rate：1e^-5^** | 0.687 | 0.343 | 0.88 |
+| **epochs：5<br>batch_size：1<br>learning_rate：1e^-5^** | 0.533 | 0.319 | 0.853 |
+| **epochs：10<br>batch_size：3<br>learning_rate：3e^-4^** | 0.612 | 0.368 | 0.878 |
+| **epochs：20<br>batch_size：5<br>learning_rate：1e^-5^** | 0.687 | 0.343 | 0.903 |
 
 ## *五、模型效果*
 **测试图片合集示例：**
