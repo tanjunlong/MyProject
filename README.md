@@ -74,7 +74,7 @@ def get_args():
 >注：在get_args函数中调整epochs、batchSize、learningRate等超参数...
 
 ### 4. 训练过程
-调整完合适的超参数过后，可以直接在命令行输入python train.py进入到训练过程，训练完成后会打印显示step、trainLoss、validationDice等信息。在执行的过程中，每一轮训练完成后会生成相应的模型权重文件(.pth文件)，也就是说多轮训练会产生多个模型权重文件，其默认放置在生成的checkpoints文件夹中，我们可以通过predict.py并结合checkpoint_epoch.pth文件来进行验证，例如：python predict.py -i data/imgs/1.jpg -m checkpoints/checkpoint_epoch.pth
+调整完合适的超参数过后，可以直接在命令行输入python train.py进入到训练过程，训练完成后会打印显示Iou、ACC、validationDice等信息。在执行的过程中，每一轮训练完成后会生成相应的模型权重文件(.pth文件)，也就是说多轮训练会产生多个模型权重文件，其默认放置在生成的checkpoints文件夹中，我们可以通过predict.py并结合checkpoint_epoch.pth文件来进行验证，例如：python predict.py -i data/imgs/1.jpg -m checkpoints/checkpoint_epoch.pth
 
 ## *四、实验结果*
 不同超参数下的模型的F1-score
